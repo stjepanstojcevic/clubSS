@@ -19,7 +19,7 @@ class ClubsViewModel: ObservableObject {
         var performanceDate: Date
         var description: String
     }
-    
+     
     let nucciPerformance = Performance(
         singerName: "Nucci",
         clubName: "Aqua",
@@ -28,7 +28,7 @@ class ClubsViewModel: ObservableObject {
     )
 
     let clubsByCity: [String: [String]] = [
-        "Biograd": ["Any...","Aqua", "Queen"],
+        "Biograd": ["Any...","Aqua", "Queen","Pocco Locco"],
         "Zadar": ["Any...","Ledana"],
         "Zagreb": ["Any...","Roko","Ritz","H2O"],
         "Požega": ["Any...","Platinum","Deja Vu"],

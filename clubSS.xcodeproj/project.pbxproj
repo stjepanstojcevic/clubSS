@@ -11,6 +11,7 @@
 		FA47C01E2A852B6E00449EC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47C01D2A852B6E00449EC1 /* ContentView.swift */; };
 		FA47C0202A852B6F00449EC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA47C01F2A852B6F00449EC1 /* Assets.xcassets */; };
 		FA47C0232A852B6F00449EC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA47C0222A852B6F00449EC1 /* Preview Assets.xcassets */; };
+		FA47C02A2A85313E00449EC1 /* biograd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA47C0292A85313E00449EC1 /* biograd.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		FA47C01D2A852B6E00449EC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA47C01F2A852B6F00449EC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA47C0222A852B6F00449EC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA47C0292A85313E00449EC1 /* biograd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = biograd.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				FA47C0222A852B6F00449EC1 /* Preview Assets.xcassets */,
+				FA47C0292A85313E00449EC1 /* biograd.jpg */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -127,6 +130,7 @@
 			files = (
 				FA47C0232A852B6F00449EC1 /* Preview Assets.xcassets in Resources */,
 				FA47C0202A852B6F00449EC1 /* Assets.xcassets in Resources */,
+				FA47C02A2A85313E00449EC1 /* biograd.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

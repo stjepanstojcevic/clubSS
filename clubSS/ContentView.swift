@@ -12,14 +12,28 @@ class ClubsViewModel: ObservableObject {
     @Published var selectedCityIndex = 0
     @Published var selectedClubIndex = 0
     @Published var selectedSingerIndex = 0
+    
+    struct Performance {
+        var singerName: String
+        var clubName: String
+        var performanceDate: Date
+        var description: String
+    }
+    
+    let nucciPerformance = Performance(
+        singerName: "Nucci",
+        clubName: "Aqua",
+        performanceDate: DateComponents(calendar: .current, year: 2023, month: 7, day: 10).date!,
+        description: "Karta je 15 eura"
+    )
 
     let clubsByCity: [String: [String]] = [
-        "Biograd": ["Aqua", "Queen"],
-        "Zadar": ["Ledana"],
-        "Zagreb": ["Roko","Ritz","H2O"],
-        "Požega": ["Platinum","Deja Vu"],
-        "Bol": ["Auro"],
-        "Makarska": ["Marakana"]
+        "Biograd": ["Any...","Aqua", "Queen"],
+        "Zadar": ["Any...","Ledana"],
+        "Zagreb": ["Any...","Roko","Ritz","H2O"],
+        "Požega": ["Any...","Platinum","Deja Vu"],
+        "Bol": ["Any...","Auro"],
+        "Makarska": ["Any...","Marakana"]
     ]
 
     var cities: [String] {
@@ -34,13 +48,17 @@ class ClubsViewModel: ObservableObject {
         clubsByCity[selectedCity] ?? []
     }
 
-    var singers = ["Voyage","Nucci","Jala Brat","Buba Corelli","Fox","Grše","Sandra Afrika","Mile Kitić"]
+    var singers = ["Any...","Voyage","Nucci","Jala Brat","Buba Corelli","Fox","Grše","Sandra Afrika","Mile Kitić","Severina","Henny","Popov","Aleksandra Prijović","Teodora Džehverović","Teodora Popovska","Ema Radujko","Maya Berović","Inas","Sajfer","Devito","Crni Cerak","Ivan Zak","Aca Lukas","Relja","Nikolija","Breskvica"]
 }
 
 struct ContentView: View {
     @StateObject private var viewModel = ClubsViewModel()
     @State private var isClubSelected = false
-    @State private var isHelloWorldVisible = false
+    @State private var isDescribeVisible = false
+    
+    @State private var selectedSinger: String = ""
+    @State private var selectedClub: String = ""
+    @State private var selectedDate: Date = Date()
 
     var body: some View {
         NavigationView {
@@ -55,8 +73,9 @@ struct ContentView: View {
                 
                 Section {
                     Picker(selection: $viewModel.selectedClubIndex, label: Text("Club").foregroundColor(Color.blue)) {
-                        ForEach(viewModel.clubsInSelectedCity, id: \.self) { clubName in
-                            Text(clubName)
+                        ForEach(0..<viewModel.clubsInSelectedCity.count, id: \.self) { index in
+                            Text(viewModel.clubsInSelectedCity[index])
+                                .tag(index)
                         }
                     }
                 }
@@ -72,29 +91,41 @@ struct ContentView: View {
                 Section {
                     Button(action: {
                         isClubSelected.toggle()
-                        isHelloWorldVisible.toggle()
+                        isDescribeVisible.toggle()
+
+                        selectedSinger = viewModel.singers[viewModel.selectedSingerIndex]
+                        selectedClub = viewModel.clubsInSelectedCity[viewModel.selectedClubIndex]
+                        selectedDate = viewModel.nucciPerformance.performanceDate
                     }) {
-                        Text("Show Details")
+                        Text("Look what we found")
                     }
-//if isClubSelected {
-//                        Text("Selected Club: \(viewModel.clubsInSelectedCity[viewModel.selectedClubIndex])")
-//                    }
-                    
-                    if isHelloWorldVisible {
-                        Text("nedjalja 13.08")
-                            .font(.largeTitle)
+                    if isDescribeVisible {
+                        Text(selectedSinger)
                             .foregroundColor(.red)
                             .padding()
-                        Text("cijena karte : 15€")
-                            .font(.largeTitle)
+                        Text("Club: \(selectedClub)")
+                            .foregroundColor(.red)
+                            .padding()
+                        Text("Date: \(selectedDate, formatter: dateFormatter)")
+                            .foregroundColor(.red)
+                            .padding()
+                        Text(viewModel.nucciPerformance.description)
                             .foregroundColor(.red)
                             .padding()
                     }
                 }
             }
-            .navigationTitle(Text("Partyyy...🥳"))
+            .navigationTitle(Text("Partyyy...🥳🥳🥳"))
         }
     }
+    
+    // Date formatter
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        return formatter
+    }()
 }
 
 struct ContentView_Previews: PreviewProvider {

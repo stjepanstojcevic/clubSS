@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var singerIndex = 0
     var clubs = ["Aqua","Ledana","Q","Deja vu","Queen","Platinum"]
     var cities = ["Biograd","Zadar","Zagreb","Požega"]
-    var singers = ["Voyage","Nucci","Jala Brat","Buba Corelli","Fox","Grše"]
+    var singers = ["Voyage","Nucci","Jala Brat","Buba Corelli","Fox","Grše","Sandra Afrika"]
     
     var body: some View
     {

@@ -61,7 +61,7 @@ struct ContentView: View {
     @State private var selectedDate: Date = Date()
 
     var body: some View {
-        NavigationView {
+        NavigationView { 
             Form {
                 Section {
                     Picker(selection: $viewModel.selectedCityIndex, label: Text("City").foregroundColor(Color.red)) {

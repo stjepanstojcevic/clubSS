@@ -48,7 +48,7 @@ class ClubsViewModel: ObservableObject {
         clubsByCity[selectedCity] ?? []
     }
 
-    var singers = ["Any...","Voyage","Nucci","Jala Brat","Buba Corelli","Fox","Grše","Sandra Afrika","Mile Kitić","Severina","Henny","Popov","Aleksandra Prijović","Teodora Džehverović","Teodora Popovska","Ema Radujko","Maya Berović","Inas","Sajfer","Devito","Crni Cerak","Ivan Zak","Aca Lukas","Relja","Nikolija","Breskvica"]
+    var singers = ["Any...","Voyage","Nucci","Jala Brat","Buba Corelli","Fox","Grše","Sandra Afrika","Mile Kitić","Severina","Henny","Popov","Aleksandra Prijović","Teodora Džehverović","Teodora Popovska","Ema Radujko","Maya Berović","Inas","Sajfer","Devito","Crni Cerak","Ivan Zak","Aca Lukas","Relja","Nikolija","Breskvica"] 
 }
 
 struct ContentView: View {
